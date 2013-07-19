@@ -1,0 +1,742 @@
+R3-GUI Change log
+
+=toc
+
+===12-Jul-2013 ver. 4989
+*added DETAB flag support 
+*fixed TEXT-AREA issues 
+*fixed TEXT init-size handling 
+*fixed SIZE-TXT bug 
+*built new R3GUI release (version 4897) 
+*delete "experimental" layout-sizing-independent.r3 
+*improve rouding 
+*move docs/r3-gui/ to documentation/r3/r3-gui/ 
+*remove documentation/r3/r3-gui/license/ directory containing obsolete license 
+*Copyright notice update 
+*license update 
+*typo fixed 
+*Rounding correction 
+*improved rotate event handling 
+*improved drag handling code (removed duplicate gui-events/drag reference) 
+*improved android text input handling 
+*fixed progress resizing 
+*improved text-able cell font handling 
+*fonts are antialiased by default on android now 
+
+===31-May-2013 ver. 4897
+*added DETAB flag support
+*fixed TEXT-AREA issues
+*fixed TEXT init-size handling
+*fixed SIZE-TXT bug
+*fixed DRAW preprocessor ARC and SCALE handling
+*modified rounding for logical pixels
+*added rotate event base support
+*added platform specific default font definitions
+*click actions are executed on UP events from now
+*updated window flags handling
+*merged Android specific code
+*inverted alpha-channel related changes
+*fixed UNVIEW to handle tooltip-windows properly
+*ACTOR functions are now CLOSURES (to handle async calls properly)
+*corrected sending order of async ENTER triggers
+*simplified get-word! parsing
+*the 'enter trigger is now 'synchronous' op
+*ESC key closes ALERTs and REQUESTs
+*corrected CONTENT get-word!s parsing/lookup
+*enhanced on-get actor for DROP-DOWN
+*enhanced REQUEST for /OPTIONS refinement
+*improved ON-CLOSE arg handling
+*added DRAW column mode to text-list/table
+*fixed /across refinement
+*fixed ATTACH chaining bug
+*restricted attached faces handling layout styles
+
+===17-Dec-2012 ver.4467
+*added tool-bar and tool-button styles
+*fixed owner detection in VIEW function
+*fixed timer crash bug
+*misc tweaks
+*updated r3gui release for heat-map
+*fixed trigger-face removal bug in panel and group styles
+*enhanced color-picker with editable color value
+*enhanced LAYOUT function
+*improved REQUEST window
+*worked around possible GC gob crash
+*fixed focal-face issues
+*added horizontal alignment for TEXT style
+*added horizontal alignment for TEXT style
+*added TEXT-ALIGN facet
+*fixed crash when close-window is called on enter key action
+*added missing arg types in face-nav.r3
+*fixed table header resizing
+*DIR-TEXT style added.
+*DIR-TEXT: supports full range from 0 to 90 angles.
+*DIR-TEXT: font definition added.
+*IMAGE: transparency problem fixed
+*DIR-TEXT: supports angles from -360 to 360.
+*TOOL-BUTTON: Typo fixed.
+*enhanced DRAW-FACE with /NOW refinement
+*TEXT-TABLE: highlight handling improved
+*TOOL-BUTTON: Highlight handling fixed.
+*TOOL-BUTTON: TAB handling fixed.
+*fixed typo in draw-face
+*corrected resize-face
+*new resizing example
+*fixed view/maximized functionality
+*added view/minimized
+*DRAWING can be used without argument in layout.
+*RESIZE-FACE function updated. The function should be used for (subface) resizing.
+*enhanced "text gobs" for optional vectorial text handling (watch out for quirks!)
+*reverted resize-face to old version fro now
+*init-size setting corrected
+*replaced the old resize-face with the new tested one
+*RECURSIVE-REINIT
+*REINIT
+*AUTO-SIZES?
+*UPDATE-FACE
+*RESIZE-FACE removed from TEXT-TABLE and TAG styles.
+*rotated text changes
+*added error-handling support
+*enhanced REQUEST
+*BUTTON now support #auto for fixed automatic width
+*fixed face relaying logic
+*corrected no-show handling in misc styles
+*fixed caret crash
+*enhanced REQUEST to accept custom "empty" buttons
+*fixed triggers return value handling
+*improved head-bar
+*enhanced FIELD for HIDE-INPUT option (useful for passwords)
+*fixed and improved TEXT widget sizing
+*corrected leaked variables
+*DRAW-FACE fix
+*enhanced focusing
+*fixed table input bug
+*fixed ctrl + arrows crash in table text editor
+*major rewrite of the TAG-AREA and TAG-FIELD styles so they work properly
+*fixed VIEW options propagation
+*text rendering improvements
+*improved TEXT style and all derived styles
+*fixed drop-down bug
+*fixed size-text-face
+*fixed request sizing bug
+*fixed request resizing
+*improved text dialect handling in button styles group
+*enhanced DO-RELATED function
+*RADIO style now supports grouping identifiers (using money! type at the moment)
+*fixed window offset bug typo
+
+===25-Mar-2012 ver.3670
+*rebuilt actualized release
+*Heat-map: multi-selection, screenshots.
+*fixed window centering bug related to tooltip-popup
+*fixed tool-tip popup handling
+*misc small fixes
+*fixed editable text gobs to support dynamic font attributes
+*added tool-tips support + global/local settings
+*added timers engine + interface(SET-TIMER, CLEAR-TIMER)
+*R3GUI: built new release package
+*R3GUI: corrected scroll-panel sizing
+*R3GUI: fixed DOC style bug
+*R3GUI: fixed requester
+*updated program help
+*rebuild executable files
+*added support for mixed nodes / leaf-nodes in one node- R3GUI: built new release package
+
+===10-Mar-2012 ver.3629
+*R3GUI: built new release package
+*R3GUI: corrected scroll-panel sizing
+*R3GUI: fixed DOC style bug
+*R3GUI: fixed requester
+*R3GUI: improved requester keyboard support
+*fixed LINE-PATTERN bug in draw preprocessor
+*STYLE/INTERN is now inherited from parent styles unless 'override is in the intern block definition
+*added font-text-size? function
+*improved tab-box style
+*shortcut handler can now return 'propagate-event to let the event go down to the face structure
+*SCROLLER now supports integer! values
+*Fixes for TAG-AREA.
+*SET-FACET now allows storing FALSE value.
+*SCROLL-PANEL supports [SET-FACE/FIELD face value h-scroll] and [SET-FACE/FIELD face value v-scroll] to set scrolling.
+*SHOW-FACE optimization
+*improved SCROLL-PANEL functionality
+*fixed cyclic bug in text-list
+*updated code to reflect SHOW-FACE changes
+*fixed SHOW-FACE fixed->ignored transition bug
+*SHOW-FACE unified the /no-draw functionality under /no-show
+*added face hiding code
+*corrected example
+*enhanced resize-face to handle layouts well
+*face size issue
+*typo fixed
+*SCROLL-PANEL: facet HIDE-SCROLLERS? added, when TRUE scrollers are hidden when not needed. Reimplemented as GROUP instead of PANEL.
+*fixed focus quirk in modal req. case
+*smaller style tweaks
+*enhanced requesters
+*fixed visible triggers bugs
+*added COLOR-ARRAY-PICKER style
+*added COLOR-PICKER style
+*fixed shortcuts handler bug
+*fixed outdated code
+*TEXT-TABLE documentation updated.
+*TEXT-TABLE: Better handling of empty values in filters.
+*TEXT-TABLE: fixes for filter menu.
+*TEXT-TABLE: better handling of clicking on empty lines.
+*TEXT-TABLE: Editor won't open when value is none! (prevents some problems).
+*TEXT-TABLE: edit works when no cell/row is selected.
+*TEXT-TABLE: editor doesn't crash in text-list mode.
+*text-table: ON-EDIT-ACTION actor is now called when user press enter in the text cell editor
+*TEXT-TABLE: missing text on resize fixed.
+*fixed draw block generation bug caused collision in nested draw-face calls cases
+*TAG-AREA: fixes for edit.
+*TAG-AREA: fixed on-set, improved look of tags.
+*TEXT-TABLE: Quick form editor now supports NO-EDIT fields.
+*TEXT-TABLE: editor placement fixed.
+*TEXT-TABLE: column attributes are now stored in block! instead of map!.
+*TEXT-TABLE: Indication of empty fields can be switched with SHOW-EMPTY facet.
+*Fixed problems with TAG-AREA.
+*TEXT-TABLE: column specific facets moved to ATTS facet for simpler access.
+*TEXT-TABLE: resizing updates
+*TEXT-TABLE: resizing changes
+*TEXT-TABLE: global NO-EDIT facet added (overrides column attributes)
+*TEXT-TABLE wording changed
+*TEXT-TABLE: Added no-edit attribute for columns.
+*fixed leaked global words
+*updated misc styles to reflect changes
+*added /maximized to VIEW
+*fixed table quirk
+*simplified tab-box style
+*reworked scroll-panel, plane, scroll-pane styles
+*TEXT-TABLE: edit mode can be turned off.
+*TEXT-TABLE: New filter handling fixed.
+*on-get-view: skips empty lines
+*on-draw-row: not executed for empty lines
+*removed resize-text-face calls during text editing
+*misc small corrections
+*updated text styles to reflect changes
+*text rendering improvements and fixes
+*TEXT-TABLE: sort arrow behaviour fixed.
+*TEXT-TABLE: set filtering and sorting programatically.
+*TEXT-TABLE: Can set filters using [set-face/field table filters]
+*TEXT-TABLE: sorting and filtering is not reset after data change.
+*TEXT-TABLE: attributes subsystem added, on-get-view returns block of blocks (previous functionality moved to on-get-flat-view).
+*text rendering fixes
+*added custom font par and anti-alias fields for text faces that doesn't have to share the style font/para/antialias fields
+*TAG styles: on-focus enhanced, remove tag fixed.
+*TEXT-TABLE: stability fixes.
+*TEXT-TABLE: CTRL+arrow in edit mode stores value as if ENTER was pressed.
+*TEXT-TABLE: on-enter actor added - actor is called when user presses enter in edit mode.
+*updated r3-gui-changes.txt
+*commented out unused variable
+
+===30-Sep-2011 ver.3015
+*removed hardcoded min-size for code-area
+*fixed filter crashes
+*commented-out strange empty cell rendering(for now)
+*fixed refresh bug in radio button
+*updated testfile
+*fixed value setter in drop-down
+*corrected drawing style to work with box-model
+*added textual styles related tests
+*TEXT-TABLE: edit mode now supports scrolling.
+*TEXT-TABLE: movement speed in edit mode optimized.
+*TAG-AREA: editing logic enhanced
+*enhanced do-face for path notation
+*drop-down keyboard enhancement
+*TEXT-TABLE: block formating changed (commas added).
+*TEXT-TABLE: TAG editor added.
+*TEXT-LIST: init-size added to options
+*TEXT-TABLE: Add row ("+") when over is none adds row to end of data.
+*TEXT-TABLE: keyboard navigation fixed for non-native views (sorted and/or filtered table).
+*TEXT-TABLE: keyboard navigation in edit mode added.
+*CHECK-GROUP demo updated for latest changes.
+*TAG styles fixes.
+*TEXT-TABLE: Empty cell signalization enhanced.
+*TAG styles resizing enabled.
+*TAG sizing fixed.
+*GET-FACE: support for block of faces added.
+*TAG styles: check for double tags added
+*TAG styles updates.
+*TEXT-TABLE: Visual clue to signalize empty cell added.
+*updated test players
+*added proper text test file
+*added proper text-table test file
+*new version of test player: plays .rec files according to the name format automatically
+*improved 'locate function in area so scrolles is updated properly
+*renamed .rec files to support the new naming format
+*generating "standard" errors in potentials.r now
+*group update corrected
+*new example added
+*example how to open simple modal dialog window
+*fixed sort-block initialization
+*TAGS moved to GUIE/TAGS to prevent namespace conflicts.
+*added /no-show to resize-face
+*updated related styles code
+*New project created for Bug reporter.
+*TEXT-TABLE: remove row on empty table bug fixed.
+*added test-results object output
+*TEXT-TABLE: edit wrong cell (mouse over) bug fixed
+*added test example of one bug in text-table
+*corrected div by zero bug
+*first round on automatic test-suite
+*datatype arg fix in scroller
+*Debug output removed.
+*Crash bug tests.
+*TEXT-TABLE cleanup.
+*TEXT-TABLE: improved support for DB-HANDLERS
+*TEXT-TABLE: basic DB-HANDLERS support.
+*TEXT-TABLE: ON-DRAW-ROW and ON-DRAW-CELL actors added.
+*DB-HANDLER improvements for latest changes
+**-GROUP styles: unfocus improvements
+**-GROUP: Focus support and keyboard navigation added.
+**-GROUP dialect fixed.
+**-GROUP styles fixed for latest changes, focus color changed.
+*TEXT-TABLE: Highlight improved.
+*TEXT-LIST: keyboard navigation fixes.
+*COLORS object added to GUIE object for global colors settings.
+*TEXT-TABLE: layout dialect simplified (doesn't need empty block for empty table)
+*TEXT-TABLE: edit fixed
+*TEXT-TABLE: gfx jumps when editing table eliminated.
+*TEXT-TABLE: setting header size more reliable
+*TEXT-TABLE: Basic load/save state support.
+*TEXT-TABLE: export labels fixed.
+*fixed nasty focusing bug
+*New TAB-BOX with better sizing.
+*TEXT-TABLE: fixed size of last header button.
+*TEXT-TABLE: Navigation improvements, more get fields added.
+*Experimental Notation velocity clone added for testing TEXT-TABLE.
+*Added BUGR: Bug reporter prototype.
+*fixed focus bug in area style
+*TEXT-LIST: data input fixed.
+*TEXT-TABLE: Fixes for keyboard navigation
+*TEXT-LIST: various fixes and improvements (focus, keyboard handling...)
+*fixed text unfocus issues
+*simplified TAB handling code
+*added PREV-TAB function
+*corrected on-key handler in area
+*fixed area focus quirk
+*fixed selection bug in text-area's on-set actor
+*fixed text/field focus logic quirks
+*fixed text hilite initialization values
+*fixed on-focus actors for text-box and field
+*TEXT: caret initalization fixed
+AREA: focus highlighting added
+*fixed caret handling
+*Compound styles (AREA, TEXT-TABLE) now support custom actors in layout.
+*DROP-DOWN: visual glitch fixed
+*TEXT-TABLE: PageUp/Down support added.
+*TEXT-TABLE: Highlighting changed (if selected line doesn't match filter, different line is selected and highlighted).
+*Typo fixed.
+*TEXT supports setting size in layout (text "lorem ipsum" 100 text "lorem ipsum" 50x50).
+*TEXT-TABLE: scroller problem fixed.
+*TEXT-TABLE: focus support.
+*TEXT-TABLE: divide by zero bug fixed.
+*TEXT-TABLE: setting size enabled.
+*TEXT-TABLE: repositioning on +/- keys fixed.
+*TEXT-TABLE: last line now visible.
+*fixed border-size facet rendering
+*added border-size test example
+*TEXT-TABLE: Edit field improvements.
+*TEXT-TABLE: add/remove line issues solved.
+*Resizing related changes for DRAWING and TEXT-TABLE.
+*TEXT-TABLE: Editing improvements.
+*TEXT-TABLE: space/enter now sends right value.
+*TEXT-TABLE: separators logic improved.
+*TEXT-TABLE: sorting direction indication added.
+*TEXT-TABLE: space and enter now calls ON-ACTION
+TEXT-TABLE: get-face can now also return 'record (data from active line or none)
+*TEXT-LIST: limit check for keyboard navigation fixed.
+*fixed field style bug
+*refactored text focus logic
+*updated drawing style
+*implemented resize-face, resize-window
+*updated drawing style
+*fixed 'infinite loop' bug  during resize
+*TEXT-TABLE: changes to sizing mechanism.
+*fixed UNVIEW quirk
+*TEXT-TABLE: ON-GET added.
+*fixed handling of outside events for popup windows
+*BUTTON-BAR dependency on TAB-BOX removed.
+*BUTTON-BAR: Button look simplified.
+SCROLL-PANEL style added for TAB-BOX.
+*TEXT-TABLE: Indication for text clipping in cell added.
+*TAB-BOX: tabs are added directly to TAB-BOX, frame removed.
+*TEXT-TABLE: Text size fixed.
+*TEXT-TABLE test updated.
+*TEXT-TABLE: Gfx updated.
+*WINDOW: Stack overflow fixed.
+TEXT-LIST: Fixes and enhancements for keyboard navigation and scrolling.
+*TEXT-TABLE: face/state/over and face/state/cell fixed for filtered views.
+*improved main event-handler
+*unified auto-unfocus functionality
+*fixed popup event loop bug
+*corrected few examples
+*Debug code removed.
+*TEXT-LIST: On-draw actor fixed.
+*TEXT-TABLE now uses NEW-TABLE code (old temporarily code moved to OLD-TABLE for compatibility reasons.)
+TEXT-TABLE: Filtering improvements.
+DROP-DOWN now uses new TEXT-LIST.
+*NEW-TABLE: editing improved, scrolling related changes.
+*NEW-TABLE: Edit field added.
+*NEW-TABLE: Support for row insert.
+*NEW-TABLE: Scrolling related fixes.
+*NEW-TABLE: Keyboard support.
+*EVENT-HANDLER: on-click now focuses face.
+*NEW-TABLE: Scrolling and slider support.
+*NEW-TABLE: Fix for sorting/filtering.
+*NEW-TABLE: sorting implemented.
+*NEW-TABLE: Filters now should be fully compatible with TEXT-TABLE.
+*NEW-TABLE: Filtering improvements.
+*NEW-TABLE: Filtering improvements.
+*NEW-TABLE: Filtering implemented.
+*code cleanup
+*fixed style/options issue
+*Image styles: unnecessary actors removed.
+*changed inline actors parsing
+*NEW-TABLE: selecting and highlighting improvements.
+*Drawing style test.
+*NEW-TABLE: Highlighting added.
+*NEW-TABLE: button bar improvements.
+*Sizing issue solved and removed.
+*NEW-TABLE updates for the sizing issue.
+*Sizing issue test.
+*PANEL/GROUP styles: scrolling fix.
+*NEW-TABLE updates.
+*TEXT-TABLE: Temporary style NEW-TABLE added.
+*first 'alpha' release of the gui testing tool
+*fixed filter dropdown crash
+*fixed scroller crash
+*unified on-action arg value
+*TEXT-TABLE demo: Fixed for current changes.
+*fixed per-window focus handling
+*TAB-BOX update.
+*removed variable that caused binding colission
+*updated example
+*FROM and TO confusion corrected
+*small edits to the document
+*first draft of the actor/reactor changes document
+*fixed crash caused by random word generator
+*removed debuug output
+*updated examples to reflect actor/reactor changes
+*first round of actor/reactor changes
+*reactor calls precisation
+*Reactor description precisation
+*added new document
+*updated examples
+*'contents' to 'content' changes
+*initial commit of renamed 'panels' examples
+*fixed dividers related crash
+*updated all sources to use the new 'layout' terminology (watch out for possible quirks!)
+*deleted obsolete 'panels' documentation
+*updated developer docs
+*TEXT-LIST: fix for db-access.
+*DOC-BROWSER: basic HTTP support.
+*VALIDATE-FACE update.
+*TEXT-TABLE: edit field scrolling fixed.
+*updated gui-debug.r3
+*removed obsolete default actors
+*added newly updated documentation
+*TEXT-TABLE: Edit field fixed.
+
+===15-Apr-2011 ver.2367
+*updated resizers calculations
+*resizers related changes
+*added support for resizers in group
+*corrected event handling of 'drag end' event
+*SHOW? function defined
+*improved next-focus
+*TEXT-TABLE: table view is updated after moving element.
+
+===13-Apr-2011 ver.2338
+*fixed print actor
+*added non-char check
+*fixed keyboard crash
+*updated scroller code
+*improved view initialization
+*fixed min-win handling
+*fixed window and panel size handling
+*UPDATE-FACE doc string
+*UPDATE-FACE function documented
+*panel-sizing: added a couple of comments
+*panel-sizing: renamed some internal variables to make code more readable
+*Group minification/magnification index bugs corrected.
+*Keeping the window size.
+*updated group dividers: disabled update propagation
+*dividers now use init-ratio for calculation
+*TEXT-TABLE: on-click fixed.
+*TEXT-TABLE: block access fixes.
+*TEXT-TABLE db-access changes.
+*INIT-RATIO calculation updated
+*D2 element resize bug in group fixed
+*INIT-RATIO variables defined
+*implemented access and shortcut keys support
+*fixed keyboard handling in panel, button and text classes
+*corrected view/options propagation
+*tab key processing corrections
+*removed tags from AREA: it's a compound style so they doesn't have to be there
+*first draft for panel resizers
+*disabled unnecessary 'updates' when dragging dividers
+*updated dividers code so it uses 'hints'
+*fixed divider detection code
+*optimized BACKDROP style
+*corrected behaviour of box-model preset system
+*small tweaks to view-window.r3
+*UPDATE-FACE function adjusted
+*added line based dividers to group
+*DO-ATTACHED: CUSTOM refinement added, tags fixed for AREA styles.
+*added dividers support for hpanel and vpanel
+*TEXT styles: scroller gets updated on mouse selection.
+*ON-ATTACHED actor replaced with DO-ATTACHED function.
+*DO-ATTACHED function added.
+*BUTTON based styles: attachment/validation related changes.
+*TEXT styles: attaching, scrolling and validation related changes.
+*PANEL and GROUP styles: scrolling related changes.
+*SLIDER: Validation support.
+*TEXT-TABLE: Validation support, better face refreshing.
+*INDICATOR style (shows validity of target face).
+*DOC style scrolling update.
+*VALIDATION support functions and VALIDATE and INDICATE reactors.
+*VIEW reactor temporary disabled.
+*TEXT-TABLE: Click on empty table fixed.
+*DRAWING: fixed, ON-SET actor added.
+*IMAGE: Facet FORCE added. When TRUE, IMAGE style won't throw error for non-existent images and will display default image instead.
+*DOC style: image-root supported.
+*DOC style: mouse wheel support added.
+*MAX-PAIR update
+
+===18-Mar-2011 ver.2182
+*fixed tab-box spacing
+*correction to box-model settings in misc styles
+*TEXT-TABLE: keyboard navigation fixed.
+*TEXT style guesses if it should allow expansion of text or not.
+*added eat-tab tag functionality
+*tabbing corrections
+*TEXT styles sizing fix.
+*TEXT-TABLE changes: collects values on displaying, new actors added (on-get-record, on-make-filter, on-apply-filter...), some
+*visual bugs fixed.
+*attached? facet can override SCROLLER's auto-attaching.
+*corrected text-gob clipping
+*removed duplicate tags definition
+*optimized text class styles
+*improved keyboard related tagging
+*FIELD tag renamed to EDIT tag
+*removed unused INPUT tags
+*added minimal window size handling
+*added more generic box-model handling
+*added layout function
+*corrected image size
+*SET-FACE optimization calling DO-FACE only when /NO-SHOW isn't in effect
+*SET-FACE function improved
+*added custom action to do-triggers
+*renamed actor-arg just to arg
+
+===11-Mar-2011
+*fixed on-make in button-bar
+*improved dropdown text
+*fixed title align
+*optimized set-face
+*added event clipping according to the box-model
+*added CLOSE trigger (user may return TRUE in the trigger actor to disable the auto-closing code)
+*temp files removed
+*GUI-materials: Default color used when material is selected, but face's color is none (fixes performance.r3 demo).
+*ELEMENT-GROUP: Changed to panel (supports 'break-after), can set default value using ON.
+*relation MIN vs. MAX for panel columns and rows made consistent
+*optimized refresh
+*improved backdrop so border can be set from view/options
+*DOC related stability improvements.
+*updated all tests script
+*BAR smaller, STATE tag added to ELEMENT-GROUP, TEXT-AREA hint related updates.
+*corrected on-resize in scroller
+*DOC: more tags added.
+*DOC updates.
+*Better SCROLLER support with panel/group styles, text sizing works better with hinting system.
+*old PLANE removed
+*Text styles updates for hinting.
+*DOC layouting somehow better.
+*PANEL and GROUP styles handle attached scrollers properly on resize.
+*fixed wrong keywords
+*fixed head-bar size
+*added new alignment examples
+*added new example
+*TAB-BOX works with no data
+*DOC style uses layout instead of rich-text
+*fonts for DOC style added
+*support for different "box-models" in panel styles (frame, etc)
+*added new example
+*DOC on-set added
+*changes to CHECK-GROUP to allow value in DO reactor
+*added DO-COMPOUND reactor (needs a better name)
+*ELEMENT-GROUP added
+*CHECK-GROUP added
+*RADIO-GROUP added
+*first commit for evaluation
+*SET-PANEL-RECORDS should be faster (set-face changed to set-face/no-show)
+*TEXT-TABLE: more error-proof.
+*text styles: on-set added for more styles.
+
+===04-Mar-2011
+*improved divider (works only with panels atm)
+*removed 'resizes from facets
+*fixed exclude-faces
+*fixed panel default settings
+*corrected bar
+*TEXT-LIST: scrolling fix.
+*Added tag for DATA style, get-panel-record more errorproof.
+*TEXT styles: scroller attaching fixed.
+*added on-get for toggle etc.
+*TEXT-TABLE: drag'n'drop disabled
+*TEXT-TABLE: Filter doesn't crash when not using column #1 in table data.
+*fixed view-request.r3
+*added reduce-opts function
+*SHOW? inline option is now SHOW-MODE
+*fixes to clicker, toggle, dropdown, check, radio, doc styles
+*fixed text handling quirks
+*VIEW/options improvements
+*TEXT-LIST: bug when value = none fixed.
+*improved toggle,drop-down text handling
+*corrected button text handling
+*updated examples
+*Group sizing improved for "out-of-bound" cases
+*TEXT-TABLE: on-over fix, code cleanups
+*TEXT-TABLE: 'on-over speedup, 'on-update-table changed to 'on-update-list, various cleanups.
+*TEXT-TABLE: limit text size if text doesn't fit in cell.
+*BUTTON: Limit text so it never overflows button frame.
+*INIT-SIZE does not have to be in MIN-SIZE to MAX-SIZE range for hgroups, vgroups and derived styles
+*vpanel and hpanel resizing adjusted to work correctly for elements with INIT-SIZE outside of the MIN-SIZE to MAX-SIZE bounds
+*corrected draw block in styles (gob-size doesn't have to be used here..use only gob/size)
+*SCROLLER: fixed wrong knob offset in some cases.
+*SHOW variable renamed in accordance with the naming convention
+*TEXT-TABLE: Datatype checking.
+*TEXT-TABLE: Datatype check on input data.
+*TEXT-TABLE: Highlighting fixed after edit.
+*TEXT-TABLE: Edit field position fixed on resizing.
+*on-set word leak fixed.
+*TAB-BOX: uses set-fields.
+*TEXT-TABLE: Scroller attachment fixed.
+*TEXT-LIST: initialization fixed.
+*group update - correct line-min and line-max values used
+*Scroller fixes for text styles.
+*removed binding to face/names in actors
+*SHOW attribute values listed
+*TEXT-LIST: scroller attaching fixed
+*COLUMN-MAX default value set to 'MAX for auto-sized h/vpanels
+*COLUMN-MAX default value set to GUIE/MAX-COORD for non-auto-sized h/vpanels
+*ROW-MAX default value set to 'MAX for auto-sized h/vpanels
+*ROW-MAX default value set to GUIE/MAX-COORD for non-auto-sized h/vpanels
+*COLUMN-MIN defined for h/vpanels
+**default value set to 'MAX for auto-sized h/vpanels
+**default value set to 0 for non-auto-sized h/vpanels
+*ROW-MIN defined for h/vpanels
+**default value set to 'MAX for auto-sized h/vpanels
+**default value set to 0 for auto-sized h/vpanels
+*LINE-MIN defined for h/vgroups
+**default value set to 'MAX for auto-sized h/vgroups
+**default value set to 0 for non-auto-sized h/vgroups
+*LINE-MAX defined for h/vgroups
+**default value set to 'MAX for auto-sized h/vgroups
+**default value set to GUIE/MAX-COORD for non-auto-sized h/vgroups
+**UPDATE-GROUP uses LINE-MIN and LINE-MAX attributes
+**UPDATE-PANEL uses the COLUMN-MIN, ROW-MIN, COLUMN-MAX and ROW-MAX attributes
+*SCROLLER: missing redraw on drag added.
+*TEXT-LIST and SCROLLER filter some unnecessary redraws.
+*added /no-draw refinement back in show-face (this is needed and used in the code!)
+*fixed invalid max-size in check
+*SCROLLER: knob positioning fixed.
+*SCROLLER: now uses set/get-fields.
+*TEXT-LIST-BOX: does work alone again.
+*TEXT-TABLE: basic datatypes support added.
+*Changes implementing manual resizability of columns/rows.
+*TEXT-TABLE: Table updated after sorting data.
+*TEXT-TABLE: 'filters set field added.
+*TEXT-TABLE: Filters are now stored in map! Setting filter requires it's id.
+*UI elements in TEXT-TABLE are now numbered by column ID, not by position in table.
+*TEXT-TABLE: get value when nothing selected fixed.
+*TEXT-LIST: check boundaries.
+*TEXT-TABLE: Edit field placement fixed.
+*TEXT-TABLE: ROW get-field added. Returns a reference to the current selected row.
+*TEXT-TABLE renders only visible lines (much faster init/scrolling).
+*fixed panel material clipping
+*box model clipping improvements
+*removed area-color, materials now use bg-color
+*optimized background handling
+*draw block tweaks
+*optimized h/vtight backgrounds
+*Filters in text-table fixed.
+*speedup: turned off gradient in htight used for labels
+*rewritten GET-FACET so it handles none and false properly
+*corrected box model setting for lists and group
+*TEXT-TABLE: FILTERED field added to get funcs.
+*TEXT-TABLE: returned value is index in all data, not in filtered data.
+*made triggers work again
+*TEXT-TABLE: Filters show all values, hidden values are below separator.
+*TEXT-LIST on-set fixed.
+*TEXT-LIST is now derived from TEXT-TABLE
+*TEXT-TABLE: supports hiding header
+*drop-down and popup fixes
+*TEXT-TABLE: Edit field scrolling fixed.
+*TEXT-TABLE: Field offset fixed.
+*TEXT-TABLE edit: scrolling partially supported.
+*TEXT-TABLE: Edit supported (first version).
+*TEXT-TABLE: no-sorting problem workaround.
+*fixed auto-sizing settings
+*improved auto-sizing defaults
+*added none! option for *-content-panel/update calls
+*added max-pair and max-coord constants to guie
+*fixed facets exstension
+*TEXT-TABLE: Scroll handling changed.
+*view/options are now propagated to BACKDROP as well
+*updated panels-23.r3 example
+*TEXT-TABLE: Better key handling.
+*TEXT-TABLE: Shift+cursor moves active, not selected line.
+*SET-FACE-KEY added for key processing.
+*added /no-draw refinement to show-face
+*TEXT-TABLE: update problem workaround
+*INIT-PANEL function - SELECT used in initialization
+*MAX-SIZE bug correction
+*added min/max-size settings to none
+*SPACING initialization moved to the INIT-PANEL function
+*gob-size = none problem correction
+*corrected auto-sizing settings for all containers
+*added /update to *-panel-content functions
+*Divider style behaviour correction
+*code optimizations
+*cleanup of obsolete parts
+*TEXT-TABLE: Filtering enhanced.
+*TEXT-TABLE: Filter support added to state.
+*TEXT-TABLE: Multi-column filter.
+*Support for /STATE refinement for SET-FACE and GET-FACE.
+*added proper dragging/resizing to the DIVIDER style
+*DIVIDER: First version added.
+*Drag origin offset fixed.
+*TEXT-TABLE: Column width support added.
+
+===28-Jan-2011
+*show-native recursive issue fixed
+*enhancements to TEXT-LIST, TEXT-TABLE, TAB-BOX styles
+*fixed DO reactor call
+*fixed reactor actions handling
+*optimized INIT-PANEL function
+*added FOREACH-FACE function
+*fixed internals of triggers subsystem
+*optimized DRAW blocks handling
+*optimized DO-STYLE and DO-TRIGGERS code
+*added triggers handling to set/insert-panel-content
+*lists.r3 code cleanup
+*cleanup of unused/leaked variables
+
+===14-Jan-2011
+*added missing images to docs (thanks to Pekr)
+*UNVIEW now works like in R2
+*removed STYLE/FACED, now it is obsolete (use only STYLE/FACETS)
+*improvements to facets creation
+*fixed box-model border caclulation
+*fixed binding of actors
+*DO-STYLE code optimalization and fixes
+*VIEW function cleanup, now it should work on block of faces as well
+*fixed panel(container) names binding
+*fixed 'load trigger calling
+*fixed WHEN style
+*misc smaller fixes
+*old unused code cleanup
+
+===07-Jan-2011
+*initial source code public release
