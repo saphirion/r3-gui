@@ -13,6 +13,6 @@ Notes:
 
 INCLUDE (https://github.com/saphirion/include) is needed to run %loader.r3 or build.r3
 
-Cyphre's opinion is that the most efficient way (in Windows) is to setup INCLUDE+R3-GUI loader to be executed everytime you click on *.r3 script. He is using that and every change to the R3GUI sources is then automatically "propagated" once I run any R3GUI script again. The instructions how to set this up are in the include documentation article.
+Cyphre's opinion is that the most efficient way (in Windows) is to setup INCLUDE+R3-GUI loader to be executed everytime you click on *.r3 script. He is using that and every change to the R3GUI sources is then automatically "propagated" once he runs any R3GUI script again. The instructions how to set this up are in the include documentation article.
 
-The documentation can be found at https://github.com/saphirion/documentation
+R3-GUI documentation can be found at https://github.com/saphirion/documentation
