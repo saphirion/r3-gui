@@ -1,5 +1,5 @@
-documentation
-=============
+R3-GUI
+======
 
 Saphirion's R3-GUI source code mainline
 
