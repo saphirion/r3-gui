@@ -30,8 +30,12 @@ svn-version?: func [
 	path [file!] "repository folder"
 	/local date version
 ] [
-	date: to date! ask "Please give the folder date: "
-	version: to integer! ask "Please give the folder version: "
+	date: ask "Please give the folder date (now): "
+	either empty? date [date: now] [date: to date! date]
+
+	version: to integer! ask "Please give the folder version (custom): "
+	if empty? version [version: "custom"]
+
 	make object! compose [
 		date: (date)
 		version: (version)
