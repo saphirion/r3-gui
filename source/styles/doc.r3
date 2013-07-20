@@ -19,33 +19,19 @@ temp-ctx-doc: context [
 
 	parse-para: funct [
 		"Convert paragraph with minor markup."
-;		out [block!] "A richtext block"
-		para "marked-up string"
-	][
+		para "marked up string" ][
+		input: decode 'markup to binary! para
 		buf: copy []
-		; !!Note: load/markup is missing in current 3.0 alpha
-		; so use simple (too simple) method...
-		while [all [para not tail? para]] [
-			either spot: find para #"<" [
-				append buf copy/part para spot
-				para: either end: find/tail spot #">" [
-					switch copy/part spot end [
-						"<b>" [append buf 'bold]
-						"</b>" [append buf [bold off]] ; bug
-						"<i>" [append buf 'italic]
-						"</i>" [append buf [italic off]] ; bug
-						"<em>" [append buf [bold italic]]
-						"</em>" [append buf [bold off italic off]] ; bug
-					]
-					end
-				][
-					next spot
-				]
-			][
-				append buf reduce [copy/part para tail para]
-				para: none
-			]
-		]
+		other: none
+		parse input [ some [
+			  <i> ( append buf 'italic )
+			| </i> ( append buf [ italic off ] )
+			| <b> ( append buf 'bold )
+			| </b> ( append buf [ bold off ])
+			| <em> ( append buf [ bold italic ] )
+			| </em> ( append buf [ bold off italic off ] )
+			| set other string! ( append buf other )
+		]]
 		buf
 	]
 
@@ -84,9 +70,9 @@ temp-ctx-doc: context [
 
 		para: make string! 20
 
-		parse/all text [
+		parse text [
 			; Document title:
-			copy s to newline skip (emit ['title s])
+			"===" copy s to newline skip (emit ['title s])
 			some [
 				"###" break
 				|
