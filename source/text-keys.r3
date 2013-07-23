@@ -89,7 +89,7 @@ text-key-map: context [
 		#"^X" #"^C"
 		#"^V" ignore
 		#"^M" ignore
-		delete deslect
+		delete deselect
 		delete-end deselect
 	]
 
