@@ -75,13 +75,13 @@ make-text-gob: funct [
 				switch/default rot [
 					90 [
 						[
-							translate (as-pair to integer! gob/size/x 0)
+							translate (as-pair gob/size/x - facets/space/1/x - facets/space/2/x 0 - facets/space/1/y)
 							rotate 90
 						]
 					]
 					270 [
 						[
-							translate (as-pair facets/space/1/x to integer! gob/size/y - facets/space/1/y - facets/space/2/y)
+							translate (as-pair 0 gob/size/y - facets/space/1/y)
 							rotate 270
 						]
 					]
@@ -91,7 +91,7 @@ make-text-gob: funct [
 			pen off
 			fill-pen (out/font/color)
 			anti-alias (out/anti-alias)
-			text 0x0
+			text 0x0 none
 			(either all [rot rot <> 0] ['vectorial]['aliased])
 			[
 				(append out compose [
