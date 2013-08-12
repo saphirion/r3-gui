@@ -120,7 +120,7 @@ image: sensor [
 	actors: [
 		on-init: [
 			if src: get-facet face 'src [
-		 		set-face face src
+		 		set-face/no-show face src
 			]
 		]
 		on-set: [ ; arg: [tag value]
