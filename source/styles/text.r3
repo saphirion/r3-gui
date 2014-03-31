@@ -473,7 +473,7 @@ text-area: [
 			either system/version/4 = 13 [
 				;touch controlled caret/selection handling (currenly for Android)
 				
-				cur: oft-to-caret sub-gob? face arg/offset
+				cur: oft-to-caret tg: sub-gob? face arg/offset - get-gob-scroll tg
 				
 				if cur [
 					switch arg/type [
@@ -497,7 +497,7 @@ text-area: [
 				;caret/selection handling using mouse
 				if all [
 					arg/type = 'down
-					cur: oft-to-caret sub-gob? face arg/offset
+					cur: oft-to-caret tg: sub-gob? face arg/offset - get-gob-scroll tg
 				][
 					click-text-face face cur arg
 					return init-drag/only face arg/offset
@@ -509,8 +509,8 @@ text-area: [
 		on-drag: [ ;arg: drag object
 ;			prin "on-drag"
 			if all [
-				arg/event/gob = sub-gob? face ; must be in same gob
-				cur: oft-to-caret sub-gob? face arg/event/offset
+				arg/event/gob = tg: sub-gob? face ; must be in same gob
+				cur: oft-to-caret tg arg/event/offset - get-gob-scroll tg
 			][
 				state: face/state
 				unless state/mark-head [state/mark-head: state/cursor]
