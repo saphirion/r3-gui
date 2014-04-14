@@ -77,7 +77,7 @@ parse-layout: funct [
 				;its word! block! combo so treat it as ACTOR (re)definition
 				build-face/not-on-make
 
-				extend-face last-face 'actors reduce [act funct [face arg] body]
+				extend-face last-face 'actors reduce [act funct/closure [face arg] body]
 
 				dial: skip dial 2
 				continue
