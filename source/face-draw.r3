@@ -25,7 +25,7 @@ dialect-draw: make object! [
     fill-pen: [tuple! image! logic!]
     fill-rule: [word!]
     gamma: [decimal!]
-    grad-pen: [word! word! pair! logic! decimal! decimal! decimal! decimal! decimal! block!]
+    grad-pen: [word! word! pair! logic! decimal! decimal! decimal! pair! block!]
     invert-matrix: []
     image: [image! tuple! word! word! integer! integer! integer! integer! * pair!]
     image-filter: [word! word! decimal!]
@@ -78,6 +78,7 @@ dialect-draw: make object! [
     bevel: none
     fixed: none
     closed: none
+	opened: none
     normal: none
     repeat: none
     reflect: none

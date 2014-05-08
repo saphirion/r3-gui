@@ -62,6 +62,7 @@ context [
 			| number!
 			| number!
 			| 'closed
+			| 'opened
 		]
 		arrow: [tuple! | pair!]
 		box: [pair! | pair! | number!]
@@ -84,7 +85,6 @@ context [
 			| 'repeat
 			| 'reflect
 			| pair!
-;			| pair!
 			| pair!
 			| number!
 			| number!
@@ -178,6 +178,7 @@ context [
 		
 		;arc
 		closed
+		opened
 		
 		;image-options
 		no-border
@@ -577,10 +578,9 @@ context [
 								any [args/word!/1 'linear]
 								any [args/word!/2 'normal]
 								any [args/pair!/1 0x0]
-;								any [args/pair!/2 0x100]
 								as-pair any [args/integer!/1 args/decimal!/1 0] any [args/integer!/2 args/decimal!/2 100]
 								any [args/integer!/3 args/decimal!/3 0]
-								any [args/pair!/3 1x1]
+								any [args/pair!/2 1x1]
 								args/block!/1
 							]
 						]
