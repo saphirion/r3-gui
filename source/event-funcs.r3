@@ -89,7 +89,10 @@ do-events: funct [
 					update-timers
 				][
 					;end of WAIT loop
-					break
+					all [
+						empty? system/view/screen-gob
+						break
+					]
 				]
 			][
 				;do timer callback
