@@ -380,7 +380,7 @@ text-area: [
 		on-set: [ ; arg: [word value]
 			switch arg/1 [
 				value [
-					face/state/cursor: tail face/facets/text-edit: reform any [face/state/value: arg/2 ""]
+					face/state/cursor: change clear face/facets/text-edit reform any [face/state/value: arg/2 ""]
 					clear-text-caret face
 					;reset selection marks as well here
 					select-none face/state
