@@ -89,10 +89,7 @@ do-events: funct [
 					update-timers
 				][
 					;end of WAIT loop
-					all [
-						empty? system/view/screen-gob
-						break
-					]
+					break
 				]
 			][
 				;do timer callback
@@ -184,7 +181,8 @@ init-view-system: func [
 			obj: select obj 'handler
 		][
 			;print ["Do-event" event/type "for:" obj/name]
-			event: obj/do-event event
+			;event: 
+			obj/do-event event
 			if guie/timeout [
 				;new timer has been set - awake from WAIT loop
 				return true
@@ -208,7 +206,9 @@ init-view-system: func [
 			obj/status: 'awake
 			unhandle-events obj
 			debug-gui 'handler ["Awake from WAIT:" obj/name]
-			return true ; awake from WAIT function
+			if find event/window/flags 'modal [
+				return true ; force awake from WAIT function only when window is modal, otherwise always check for empty screen-gob below
+			]
 		]
 
 		; If there are no windows, we should awake from WAIT:
