@@ -42,7 +42,7 @@ dialect-draw: make object! [
     rotate: [decimal!]
     scale: [decimal! decimal!]
     shape: [block!]
-    skew: [decimal!]
+    skew: [pair!]
     spline: [integer! word! * pair!]
     text: [word! pair! pair! block!]
     transform: [decimal! pair! decimal! decimal! pair!]
